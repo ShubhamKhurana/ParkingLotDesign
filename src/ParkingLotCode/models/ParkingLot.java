@@ -3,6 +3,9 @@ package ParkingLotCode.models;
 import ParkingLotCode.models.constants.ParkingLotStatus;
 import ParkingLotCode.models.constants.VehicleType;
 
+import ParkingLotCode.service.strategy.slotAllocationStrategy.SlotAllocationStrategy;
+import ParkingLotCode.service.strategy.billCalculationStrategy.BillCalculationStrategy;
+
 import java.util.List;
 
 public class ParkingLot extends BaseModel{
@@ -12,5 +15,5 @@ public class ParkingLot extends BaseModel{
     private ParkingLotStatus parkingLotStatus;
     private List<VehicleType> allowedVehicleTypes;
     private SlotAllocationStrategy slotAllocationStrategy;
-    private BillAllocationStrategy billAllocationStrategy;
+    private BillCalculationStrategy billCalculationStrategy;
 }
