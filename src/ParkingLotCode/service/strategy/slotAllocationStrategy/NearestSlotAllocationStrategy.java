@@ -13,6 +13,7 @@ public class NearestSlotAllocationStrategy implements SlotAllocationStrategy{
         for(ParkingSlot slot : parkingLot.getParkingFloorList().get(floorNumber).getParkingSlotList()){
             if(slot.getParkingSlotStatus().equals(ParkingSlotStatus.AVAILABLE) &&
                     slot.getVehicleType().equals(vehicleType)){
+                slot.setParkingSlotStatus(ParkingSlotStatus.NOT_AVAILABLE);
                 return slot;
             }
         }
