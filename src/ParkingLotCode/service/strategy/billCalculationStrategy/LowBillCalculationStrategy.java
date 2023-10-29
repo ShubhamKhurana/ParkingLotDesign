@@ -1,7 +1,6 @@
 package ParkingLotCode.service.strategy.billCalculationStrategy;
 
 import ParkingLotCode.models.Ticket;
-import ParkingLotCode.models.constants.VehicleType;
 
 import java.time.LocalDateTime;
 import java.time.temporal.ChronoUnit;
