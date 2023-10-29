@@ -11,6 +11,12 @@ public class Ticket extends BaseModel{
     private Gate gate;
     private TicketStatus ticketStatus;
 
+    private static int ticketCounter = 1;
+
+    public Ticket(){
+        super(ticketCounter++);
+    }
+
     public LocalDateTime getEntryTime() {
         return entryTime;
     }

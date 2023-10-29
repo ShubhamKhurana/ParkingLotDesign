@@ -10,6 +10,14 @@ public abstract class BaseModel {
     private String createdBy;
     private String updatedBy;
 
+    public BaseModel(){
+
+    }
+
+    public BaseModel(int id) {
+        this.id = id;
+    }
+
     public int getId() {
         return id;
     }
