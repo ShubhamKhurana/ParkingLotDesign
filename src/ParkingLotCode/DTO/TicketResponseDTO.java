@@ -2,25 +2,27 @@ package ParkingLotCode.DTO;
 
 import ParkingLotCode.models.Vehicle;
 
+import java.time.LocalDateTime;
+
 public class TicketResponseDTO {
-    private String entryTime;
+    private LocalDateTime entryTime;
     private String vehicleNumber;
     private int slotNumber; // User can know everything about slot from slotNumber
 
     @Override
     public String toString() {
         return "TicketResponseDTO{" +
-                "entryTime='" + entryTime + '\'' +
+                "entryTime='" + entryTime.toString() + '\'' +
                 ", vehicleNumber='" + vehicleNumber + '\'' +
                 ", slotNumber=" + slotNumber +
                 '}';
     }
 
-    public String getEntryTime() {
+    public LocalDateTime getEntryTime() {
         return entryTime;
     }
 
-    public void setEntryTime(String entryTime) {
+    public void setEntryTime(LocalDateTime entryTime) {
         this.entryTime = entryTime;
     }
 

@@ -27,7 +27,7 @@ public class TicketController {
         Ticket ticket = ticketService.createTicket(vehicle, ticketRequestDTO.getGateId(), ticketRequestDTO.getParkingLotId(), LocalDateTime.now());
 
         TicketResponseDTO ticketResponseDTO = new TicketResponseDTO();
-        ticketResponseDTO.setEntryTime(ticket.getEntryTime().toString());
+        ticketResponseDTO.setEntryTime(ticket.getEntryTime());
         ticketResponseDTO.setVehicleNumber(ticket.getVehicle().getNumber());
         ticketResponseDTO.setSlotNumber(ticket.getParkingSlot().getNumber());
 

@@ -1,13 +1,15 @@
 package ParkingLotCode;
 
+import ParkingLotCode.DTO.BillRequestDTO;
+import ParkingLotCode.DTO.BillResponseDTO;
 import ParkingLotCode.DTO.TicketRequestDTO;
 import ParkingLotCode.DTO.TicketResponseDTO;
+import ParkingLotCode.controller.BillController;
 import ParkingLotCode.controller.TicketController;
 import ParkingLotCode.exception.GateNotFoundException;
 import ParkingLotCode.exception.ParkingLotNotFoundException;
 import ParkingLotCode.exception.TicketNotFoundException;
-import ParkingLotCode.models.ParkingLot;
-import ParkingLotCode.models.constants.VehicleType;
+import ParkingLotCode.models.constants.*;
 import ParkingLotCode.repository.*;
 import ParkingLotCode.service.InitService;
 import ParkingLotCode.service.InitServiceImpl;
@@ -38,6 +40,24 @@ public class ParkingLotMain {
 
         TicketResponseDTO ticketResponseDTO = ticketController.createTicket(ticketRequestDTO);
         System.out.println(ticketResponseDTO.toString());
+
+
+        BillController billController = new BillController(parkingLotRepository);
+
+        BillRequestDTO billRequestDTO = new BillRequestDTO();
+        billRequestDTO.setParkingLotId(1);
+        billRequestDTO.setGateId(52);
+        billRequestDTO.setGateNumber(52);
+        billRequestDTO.setGateStatus(GateStatus.OPEN);
+        billRequestDTO.setName("Mercedes");
+        billRequestDTO.setColor("Blue");
+        billRequestDTO.setVehicleType(VehicleType.CAR);
+        billRequestDTO.setNumber("12345");
+        billRequestDTO.setParkingSlotNumber(ticketResponseDTO.getSlotNumber());
+        billRequestDTO.setEntryTime(ticketResponseDTO.getEntryTime());
+
+        BillResponseDTO billResponseDTO = billController.generateBill(billRequestDTO);
+        System.out.println(billResponseDTO.toString());
 
 //        ParkingLot parkingLot = parkingLotRepository.get(1);
     }

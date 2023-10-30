@@ -9,6 +9,17 @@ public class ParkingSlot extends BaseModel{
     private ParkingSlotStatus parkingSlotStatus;
     private Vehicle vehicle;
 
+    public ParkingSlot(){
+
+    }
+
+    public ParkingSlot(int number, VehicleType vehicleType, ParkingSlotStatus parkingSlotStatus, Vehicle vehicle) {
+        this.number = number;
+        this.vehicleType = vehicleType;
+        this.parkingSlotStatus = parkingSlotStatus;
+        this.vehicle = vehicle;
+    }
+
     public int getNumber() {
         return number;
     }

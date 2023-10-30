@@ -22,7 +22,7 @@ public class HighBillCalculationStrategy implements BillCalculationStrategy{
         LocalDateTime entryTime = ticket.getEntryTime();
 
         // gives ceil (eg, 61 minutes will give 2 hours, so we'll charge for 2 hours)
-        long totalHours = ChronoUnit.HOURS.between(exitTime, entryTime);
+        long totalHours = ChronoUnit.HOURS.between(entryTime, exitTime);
         int costPerHour = getCostPerHour(ticket);
 
         double baseCost = costPerHour*totalHours;

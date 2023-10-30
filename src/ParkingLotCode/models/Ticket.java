@@ -17,6 +17,14 @@ public class Ticket extends BaseModel{
         super(ticketCounter++);
     }
 
+    public Ticket(LocalDateTime entryTime, Vehicle vehicle, ParkingSlot parkingSlot, Gate gate, TicketStatus ticketStatus) {
+        this.entryTime = entryTime;
+        this.vehicle = vehicle;
+        this.parkingSlot = parkingSlot;
+        this.gate = gate;
+        this.ticketStatus = ticketStatus;
+    }
+
     public LocalDateTime getEntryTime() {
         return entryTime;
     }

@@ -4,7 +4,7 @@ import java.time.LocalDateTime;
 
 public class Bill extends BaseModel{
     private LocalDateTime exitTime;
-    private int amount;
+    private double amount;
     private Ticket ticket;
     private Gate gate;
 
@@ -16,11 +16,11 @@ public class Bill extends BaseModel{
         this.exitTime = exitTime;
     }
 
-    public int getAmount() {
+    public double getAmount() {
         return amount;
     }
 
-    public void setAmount(int amount) {
+    public void setAmount(double amount) {
         this.amount = amount;
     }
 
